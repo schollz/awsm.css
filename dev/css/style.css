@@ -10,7 +10,8 @@ body {
   margin: 1em; }
   body > header,
   body > main,
-  body > footer {
+  body > footer,
+  body > article {
     max-width: 666px;
     margin: 0 auto; }
   body > header {
