@@ -1,7 +1,72 @@
 html {
-	
+	color: #25291C;
+	font-family: "PT Serif", Georgia, sans-serif;
+	font-size: 16px;
 }
 
 body {
-	
+	> header,
+	> main,
+	> footer {
+		max-width: 666px;
+		margin: 0 auto;
+	}
+
+	> header {
+		text-align: center;
+	}
 }
+
+%links-hover {
+	color: #3000c1;
+	
+	transition: color 0ms;
+}
+
+a {
+	color: #0064C1;
+	text-decoration: none;
+	
+	transition: color 300ms;
+
+	&:hover,
+	&:focus {
+		@extend %links-hover;
+	}
+
+	&:visited {
+		color: #6d00c1;
+		
+		&:hover {
+			@extend %links-hover;
+		}
+	}
+}
+
+header {
+	p {
+		font-size: 18px;
+	}
+}
+
+nav {
+	margin: 30px;
+	
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		
+		li {
+			display: inline-block;
+			margin: 0 5px;
+		}
+	}
+}
+
+h1 {
+	color: #070600;
+	font-size: 3em;
+	font-weight: 400;
+}
+

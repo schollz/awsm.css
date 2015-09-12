@@ -15,12 +15,14 @@ body > header {
 a:hover,
 a:focus, a:visited:hover {
   color: #3000c1;
-  transition: color 0ms; }
+  -webkit-transition: color 0ms;
+          transition: color 0ms; }
 
 a {
   color: #0064C1;
   text-decoration: none;
-  transition: color 300ms; }
+  -webkit-transition: color 300ms;
+          transition: color 300ms; }
   a:visited {
     color: #6d00c1; }
 
