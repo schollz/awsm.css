@@ -50,9 +50,10 @@ gulp.task('css', function() {
 	gulp.src(mask.css)
 		.pipe(cache('cssing'))
 		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }) ]))
+		.pipe(rename('awsm.css'))
 		.pipe(gulp.dest(output.css))
 		.pipe(minifyCSS())
-		.pipe(rename('style.min.css'))
+		.pipe(rename('awsm.min.css'))
 		.pipe(gulp.dest(output.css))
 		.pipe(browserSync.stream());
 });
