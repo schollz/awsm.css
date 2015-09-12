@@ -1,0 +1,21 @@
+{
+  "name": "awsm",
+  "version": "1.0.0",
+  "description": "simple css lib for fcking responsive sites",
+  "author": "Igor Adamenko",
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.0",
+    "browser-sync": "^2.7.12",
+    "gulp": "^3.9.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-file-include": "^0.10.0",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-postcss": "^5.1.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.5",
+    "rimraf": "^2.4.0"
+  },
+  "main": "gulpfile.js",
+  "license": "MIT"
+}
