@@ -3,14 +3,16 @@ html {
   font-family: "PT Serif", Georgia, sans-serif;
   font-size: 16px; }
 
-body > header,
-body > main,
-body > footer {
-  max-width: 666px;
-  margin: 0 auto; }
-
-body > header {
-  text-align: center; }
+body {
+  margin: 1em; }
+  body > header,
+  body > main,
+  body > footer {
+    max-width: 666px;
+    margin: 0 auto; }
+  body > header {
+    margin-bottom: 3em;
+    text-align: center; }
 
 a:hover,
 a:focus, a:visited:hover {
@@ -27,10 +29,11 @@ a {
     color: #6d00c1; }
 
 header p {
+  margin: 0.5em 0;
   font-size: 18px; }
 
 nav {
-  margin: 30px; }
+  margin: 2em 0; }
   nav ul {
     padding: 0;
     margin: 0;
@@ -40,6 +43,21 @@ nav {
       margin: 0 5px; }
 
 h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0;
   color: #070600;
-  font-size: 3em;
-  font-weight: 400; }
+  font-size: 4em;
+  font-weight: 400;
+  line-height: 1.2; }
+
+h2 {
+  margin-bottom: .5em;
+  font-weight: 400;
+  font-size: 2.1em; }
+
+code {
+  display: block;
+  padding: 10px 15px;
+  background: #f2f2f2;
+  border: 1px solid #E8E8E8;
+  border-radius: 1px; }
