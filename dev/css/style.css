@@ -1,7 +1,10 @@
+/* colors */
+/* main */
 html {
   color: #25291C;
   font-family: "PT Serif", Georgia, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  line-height: 1.5; }
 
 body {
   margin: 1em; }
@@ -19,16 +22,11 @@ a:focus, a:visited:hover {
   color: #3000c1;
   transition: color 0ms; }
 
-a {
-  color: #0064C1;
-  text-decoration: none;
-  transition: color 300ms; }
-  a:visited {
-    color: #6d00c1; }
-
 header p {
-  margin: 0.5em 0;
   font-size: 18px; }
+
+section {
+  margin-bottom: 4em; }
 
 nav {
   margin: 2em 0; }
@@ -39,6 +37,13 @@ nav {
     nav ul li {
       display: inline-block;
       margin: 0 5px; }
+
+a {
+  color: #0064C1;
+  text-decoration: none;
+  transition: color 300ms; }
+  a:visited {
+    color: #6d00c1; }
 
 h1 {
   margin-top: 0.5em;
@@ -53,9 +58,17 @@ h2 {
   font-weight: 400;
   font-size: 2.1em; }
 
+pre {
+  margin: 0; }
+
 code {
   display: block;
   padding: 10px 15px;
   background: #f2f2f2;
   border: 1px solid #E8E8E8;
-  border-radius: 1px; }
+  border-radius: 1px;
+  font-family: Consolas, Courier, monospace; }
+
+p {
+  margin: .5em 0;
+  color: #111; }
