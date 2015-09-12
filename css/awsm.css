@@ -1,0 +1,45 @@
+html {
+  color: #25291C;
+  font-family: "PT Serif", Georgia, sans-serif;
+  font-size: 16px; }
+
+body > header,
+body > main,
+body > footer {
+  max-width: 666px;
+  margin: 0 auto; }
+
+body > header {
+  text-align: center; }
+
+a:hover,
+a:focus, a:visited:hover {
+  color: #3000c1;
+  -webkit-transition: color 0ms;
+          transition: color 0ms; }
+
+a {
+  color: #0064C1;
+  text-decoration: none;
+  -webkit-transition: color 300ms;
+          transition: color 300ms; }
+  a:visited {
+    color: #6d00c1; }
+
+header p {
+  font-size: 18px; }
+
+nav {
+  margin: 30px; }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      margin: 0 5px; }
+
+h1 {
+  color: #070600;
+  font-size: 3em;
+  font-weight: 400; }
