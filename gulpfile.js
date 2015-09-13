@@ -37,7 +37,7 @@ gulp.task('html', function() {
 	gulp.src(mask.html)
 		.pipe(fileinclude().on('error', util.log))
 		.pipe(cache('htmling'))
-		.pipe(filter(['!dev/example/includes']))
+		.pipe(filter(['*', '!dev/example/includes']))
 		.pipe(gulp.dest(output.main))
 		.pipe(browserSync.stream());
 });
