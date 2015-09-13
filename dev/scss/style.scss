@@ -114,12 +114,15 @@ h2 {
 
 pre {
 	margin: 0;
+	
+	> code {
+		display: block;
+		padding: 10px 15px;
+	}
 }
 
 code {
-	display: block;
-	padding: 10px 15px;
-	
+	padding: 0.06250em 0.31250em;
 	background: #f2f2f2;
 	border: 1px solid #E8E8E8;
 	border-radius: 1px;
