@@ -1,5 +1,4 @@
 <abbr>
-<article>
 <aside>
 <audio>
 <b>
@@ -33,7 +32,7 @@
 <ins>
 <kbd>
 <label> — ?
-<legend> — ?
+<legend>
 <mark>
 <menu>
 <meter>
@@ -46,10 +45,8 @@
 <progress> — ?
 <q>
 <samp>
-<section>
 <select>
 <small>
-<span>
 <strong>
 <sub>
 <summary>
