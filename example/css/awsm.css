@@ -74,7 +74,8 @@ pre {
   margin: 0; }
   pre > code {
     display: block;
-    padding: 10px 15px; }
+    padding: 10px 15px;
+    overflow: auto; }
 
 code {
   padding: 0.0625em 0.3125em;
