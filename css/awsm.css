@@ -32,7 +32,7 @@ a:focus, a:visited:hover {
 header p {
   font-size: 18px; }
 
-section {
+section, article {
   margin-bottom: 4em; }
 
 nav {
