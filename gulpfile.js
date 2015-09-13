@@ -6,6 +6,7 @@ var gulp		= require('gulp'),
 	cache 		= require('gulp-cached'),
 	fileinclude = require('gulp-file-include'),
 	rename		= require('gulp-rename'),
+	filter 		= require('gulp-filter'),
 	rimraf		= require('rimraf'),
 
 	autoprefixr = require('autoprefixer-core'),
@@ -36,6 +37,7 @@ gulp.task('html', function() {
 	gulp.src(mask.html)
 		.pipe(fileinclude().on('error', util.log))
 		.pipe(cache('htmling'))
+		.pipe(filter(['!dev/example/includes']))
 		.pipe(gulp.dest(output.main))
 		.pipe(browserSync.stream());
 });
