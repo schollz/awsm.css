@@ -23,8 +23,16 @@ body {
 	}
 
 	> header {
-		margin-bottom: 3em;
+		margin-bottom: 2.5em;
 		
+		text-align: center;
+	}
+
+	> footer {
+		margin-top: 4em;
+		
+		color: #A3A39B;
+		font-size: 0.9em;
 		text-align: center;
 	}
 }

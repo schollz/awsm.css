@@ -15,7 +15,12 @@ body {
     max-width: 666px;
     margin: 0 auto; }
   body > header {
-    margin-bottom: 3em;
+    margin-bottom: 2.5em;
+    text-align: center; }
+  body > footer {
+    margin-top: 4em;
+    color: #A3A39B;
+    font-size: 0.9em;
     text-align: center; }
 
 a:hover,
