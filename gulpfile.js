@@ -16,7 +16,7 @@ var gulp		= require('gulp'),
 /* paths */
 
 var mask = {
-		html: 'dev/example/*.html',
+		html: 'dev/example/**/*.html',
 		css: 'dev/css/style.css',
 	},
 	input = {
