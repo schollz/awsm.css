@@ -13,6 +13,7 @@ body {
   body > main,
   body > footer,
   body > article {
+    display: block;
     position: relative;
     max-width: 666px;
     margin: 0 auto; }

@@ -23,6 +23,7 @@ body {
 	> main,
 	> footer,
 	> article {
+		display: block;
 		position: relative;
 		max-width: $content-size;
 		margin: 0 auto;
