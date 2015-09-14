@@ -110,3 +110,22 @@ code {
 p {
   margin: .5em 0;
   color: #111; }
+
+figure {
+  display: inline-block;
+  padding: 6px 22px;
+  margin: 0;
+  border: 1px solid #E8E8E8;
+  border-radius: 1px; }
+  figure img {
+    max-width: 100%;
+    margin: 10px 0 15px; }
+    figure img + figcaption {
+      margin-top: 0;
+      margin-bottom: 10px; }
+  figure figcaption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px; }
+    figure figcaption + img {
+      margin: 15px 0 10px; }
