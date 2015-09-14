@@ -4,6 +4,9 @@ $accent-color: #070600;
 $text-color: #111;
 $disable-color: #7D7D77;
 
+/* sizes */
+$content-size: 666px;
+
 /* main */
 html {
 	color: $main-color;
@@ -19,7 +22,8 @@ body {
 	> main,
 	> footer,
 	> article {
-		max-width: 666px;
+		position: relative;
+		max-width: $content-size;
 		margin: 0 auto;
 	}
 
@@ -72,6 +76,23 @@ nav {
 			
 			color: $disable-color;
 		}
+	}
+}
+
+aside {
+	position: absolute;
+	right: -200px;
+	max-width: 150px;
+	padding-right: 1em;
+	
+	color: $disable-color;
+	font-style: italic;
+	
+	@media (max-width: $content-size + 200px * 2) {
+		position: relative;
+		right: auto;
+		max-width: none;
+		padding: 0;
 	}
 }
 
