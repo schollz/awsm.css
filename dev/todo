@@ -1,8 +1,10 @@
 <abbr>
 <audio>
 <b>
+<blockquote>
 <button>
 <caption>
+<cite>
 <code>
 <datalist>
 <dd>
@@ -30,6 +32,7 @@
 <mark>
 <meter>
 <noscript>
+<ol>
 <optgroup> — ?
 <option> — ?
 <output>
@@ -53,4 +56,5 @@
 <time>
 <tr>
 <u> — !
+<ul>
 <var>
