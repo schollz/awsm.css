@@ -19,6 +19,7 @@ var gulp		= require('gulp'),
 var mask = {
 		html: 'dev/example/**/*.html',
 		css: 'dev/css/style.css',
+		images: 'dev/example/images/*'
 	},
 	input = {
 		css: 'dev/css',
@@ -27,11 +28,12 @@ var mask = {
 	output = {
 		main: 'example',
 		css: 'example/css',
+		images: 'example/images'
 	};
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['html', 'scss', 'css']);
+gulp.task('build', ['html', 'scss', 'css', 'images']);
 
 gulp.task('html', function() {
 	gulp.src(mask.html)
@@ -60,6 +62,12 @@ gulp.task('css', function() {
 		.pipe(browserSync.stream());
 });
 
+gulp.task('images', function() {
+	gulp.src(mask.images) 
+		.pipe(gulp.dest(output.images))
+		.pipe(browserSync.stream());
+});
+
 gulp.task('server', function() {
 	browserSync.init({
 		server: output.main,
@@ -73,6 +81,7 @@ gulp.task('watch', function() {
 	gulp.watch(mask.html, ['html']);
 	gulp.watch(input.scss, ['scss']);
 	gulp.watch(mask.css, ['css']);
+	gulp.watch(mask.images, ['images']);
 });
 
 gulp.task('clean', function(cb) {
