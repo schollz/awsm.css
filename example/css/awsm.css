@@ -133,8 +133,22 @@ figure {
       margin: 15px 0 10px; }
 
 dl {
-  margin-top: 1em; }
+  margin: 1em 0 1.5em; }
   dl dt {
     font-weight: 700; }
   dl dd {
     margin-bottom: 1em; }
+
+details {
+  display: block;
+  padding: 0 0.5em 0;
+  border: 1px solid #E8E8E8;
+  border-radius: 1px;
+  background-color: #fafafa; }
+  details summary {
+    display: block;
+    padding: 0 0.5em 0;
+    margin: 0 -0.5em 0;
+    background-color: white;
+    outline: none;
+    font-weight: 700; }
