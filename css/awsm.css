@@ -1,4 +1,5 @@
 /* colors */
+/* sizes */
 /* main */
 html {
   color: #25291C;
@@ -12,6 +13,7 @@ body {
   body > main,
   body > footer,
   body > article {
+    position: relative;
     max-width: 666px;
     margin: 0 auto; }
   body > header {
@@ -48,6 +50,20 @@ nav {
       display: inline-block;
       margin: 0 5px;
       color: #7D7D77; }
+
+aside {
+  position: absolute;
+  right: -200px;
+  max-width: 150px;
+  padding-right: 1em;
+  color: #7D7D77;
+  font-style: italic; }
+  @media (max-width: 1066px) {
+    aside {
+      position: relative;
+      right: auto;
+      max-width: none;
+      padding: 0; } }
 
 a {
   color: #0064C1;
