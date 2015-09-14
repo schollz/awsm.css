@@ -112,6 +112,8 @@ p {
   margin: .5em 0; }
 
 figure {
+  box-sizing: border-box;
+  max-width: 100%;
   display: inline-block;
   padding: 6px 22px;
   margin: .5em 0;
@@ -145,7 +147,7 @@ details {
   background-color: #fafafa; }
   details summary {
     display: block;
-    padding: 0 0.5em 0;
+    padding: 0 0.5em 0.1em;
     margin: 0 -0.5em 0;
     background-color: white;
     outline: none;
