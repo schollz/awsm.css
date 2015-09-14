@@ -2,7 +2,7 @@
 /* sizes */
 /* main */
 html {
-  color: #25291C;
+  color: #111;
   font-family: "PT Serif", Georgia, sans-serif;
   font-size: 16px;
   line-height: 1.5; }
@@ -84,12 +84,14 @@ h1 {
 h2 {
   margin-top: .8em;
   margin-bottom: .5em;
+  color: #25291C;
   font-weight: 400;
   font-size: 2.1em; }
 
 h3 {
   margin-top: 1.2em;
   margin-bottom: .5em;
+  color: #25291C;
   font-size: 1.4em;
   font-weight: 400; }
 
@@ -108,8 +110,7 @@ code {
   font-family: Consolas, Courier, monospace; }
 
 p {
-  margin: .5em 0;
-  color: #111; }
+  margin: .5em 0; }
 
 figure {
   display: inline-block;
