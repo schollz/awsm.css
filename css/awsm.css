@@ -13,7 +13,6 @@ body {
   body > main,
   body > footer,
   body > article {
-    display: block;
     position: relative;
     max-width: 666px;
     margin: 0 auto; }
@@ -130,6 +129,3 @@ figure {
     margin-top: 10px; }
     figure figcaption + img {
       margin: 15px 0 10px; }
-
-ul, ol {
-  padding-left: 0; }
