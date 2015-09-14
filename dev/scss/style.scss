@@ -23,6 +23,7 @@ body {
 	> main,
 	> footer,
 	> article {
+		display: block;
 		position: relative;
 		max-width: $content-size;
 		margin: 0 auto;
@@ -195,4 +196,8 @@ figure {
 			margin: 15px 0 10px;
 		}
 	}
+}
+
+ul, ol {
+	padding-left: 0;
 }
