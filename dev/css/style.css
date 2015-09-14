@@ -128,3 +128,10 @@ figure {
     margin-top: 10px; }
     figure figcaption + img {
       margin: 15px 0 10px; }
+
+dl {
+  margin-top: 1em; }
+  dl dt {
+    font-weight: 700; }
+  dl dd {
+    margin-bottom: 1em; }
