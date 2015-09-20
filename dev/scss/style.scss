@@ -283,3 +283,12 @@ abbr {
 dfn {
 	letter-spacing: 0.05em;
 }
+
+del {
+	color: $disable-color;
+}
+
+ins {
+	text-decoration: none;
+	background: lighten($disable-color, 45);
+}

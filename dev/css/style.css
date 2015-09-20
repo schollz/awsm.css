@@ -180,3 +180,10 @@ abbr {
 
 dfn {
   letter-spacing: 0.05em; }
+
+del {
+  color: #7D7D77; }
+
+ins {
+  text-decoration: none;
+  background: #ededec; }
