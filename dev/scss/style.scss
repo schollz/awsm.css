@@ -231,3 +231,45 @@ details {
 		font-weight: 700;
 	} 
 }
+
+table {
+	width: 100%;
+	
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 1px solid $border-color;
+	
+	text-align: left;
+	
+	caption {
+		font-style: italic;
+		margin-bottom: 0.3em;
+	}
+	
+	thead {
+		background: $border-color;
+	}
+
+	%td-th {
+		padding: .3em .7em;
+		border: 1px solid $border-color;
+		
+		vertical-align: top;
+	}
+
+	td {
+		@extend %td-th;
+	}
+
+	th {
+		@extend %td-th;
+		
+		border: 1px solid darken($border-color, 10);
+	}
+
+	tr {
+		&:nth-child(even) td {
+			background: lighten($border-color, 6);
+		}
+	}
+}
