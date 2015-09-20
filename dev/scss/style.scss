@@ -168,6 +168,7 @@ code {
 
 img {
 	display: block;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
@@ -183,7 +184,6 @@ p {
 
 figure {
 	box-sizing: border-box;
-	max-width: 100%;
 	display: inline-block;
 	padding: 6px 22px;
 	margin: .5em 0;
