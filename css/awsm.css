@@ -110,8 +110,16 @@ code {
   border-radius: 1px;
   font-family: Consolas, Courier, monospace; }
 
+img {
+  display: block;
+  margin: 0 auto; }
+
 p {
   margin: .5em 0; }
+  p img {
+    margin: 0.3em 0 0.3em 0.5em;
+    float: right;
+    border: 1px solid #E8E8E8; }
 
 figure {
   box-sizing: border-box;
