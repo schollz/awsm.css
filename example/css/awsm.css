@@ -189,3 +189,6 @@ del {
 ins {
   text-decoration: none;
   background: #ededec; }
+
+mark {
+  background: #ffeab9; }
