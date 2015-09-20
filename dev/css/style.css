@@ -172,3 +172,11 @@ table {
     border: 1px solid #cfcfcf; }
   table tr:nth-child(even) td {
     background: #f7f7f7; }
+
+abbr {
+  font-size: .875em;
+  letter-spacing: .15em;
+  margin-right: -0.15em; }
+
+dfn {
+  letter-spacing: 0.05em; }
