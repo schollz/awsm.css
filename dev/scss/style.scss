@@ -166,8 +166,19 @@ code {
 	font-family: Consolas, Courier, monospace;
 }
 
+img {
+	display: block;
+	margin: 0 auto;
+}
+
 p {
 	margin: .5em 0;
+	
+	img {
+		margin: .3em 0 .3em .5em;
+		float: right;
+		border: 1px solid $border-color;
+	}
 }
 
 figure {
