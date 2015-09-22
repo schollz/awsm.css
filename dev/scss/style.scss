@@ -146,6 +146,73 @@ h3 {
 	font-weight: 400;
 }
 
+h4 {
+	margin: 0 0 .5em;
+	
+	color: darken($disable-color, 10);
+	font-size: 1em;
+}
+
+form {
+	// display: inline-block;
+	max-width: 300px;
+	padding: 12px 10px;
+	margin: 0 auto;
+
+	// border: 1px solid $border-color;
+}
+
+fieldset {
+	border: 1px solid darken($border-color, 10);
+} 
+
+legend {
+	color: $disable-color;
+} 
+
+label {
+	display: block;
+} 
+
+input {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: .3em .5em;
+	
+	border: 1px solid darken($border-color, 20);
+	outline: none;
+	
+	font-size: 1em;
+	font-family: inherit;
+	
+	transition: border 200ms;
+	
+	&:focus {
+		border: 1px solid darken($border-color, 50);
+	}
+
+	&[type=submit] {
+		width: auto;
+		margin-bottom: 0;
+		
+		border-radius: 2px;
+		background: $border-color;
+		
+		color: $headers-color;
+
+		cursor: pointer;
+		
+		&:focus, &:hover {
+			border: 1px solid darken($border-color, 50);
+			background: darken($border-color, 15);
+			
+			color: $accent-color;
+		}
+	}
+}
+
 pre {
 	margin: 0;
 	

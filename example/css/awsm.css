@@ -96,6 +96,51 @@ h3 {
   font-size: 1.4em;
   font-weight: 400; }
 
+h4 {
+  margin: 0 0 0.5em;
+  color: #63635e;
+  font-size: 1em; }
+
+form {
+  max-width: 300px;
+  padding: 12px 10px;
+  margin: 0 auto; }
+
+fieldset {
+  border: 1px solid #cfcfcf; }
+
+legend {
+  color: #7D7D77; }
+
+label {
+  display: block; }
+
+input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0.3em 0.5em;
+  border: 1px solid #b5b5b5;
+  outline: none;
+  font-size: 1em;
+  font-family: inherit;
+  -webkit-transition: border 200ms;
+          transition: border 200ms; }
+  input:focus {
+    border: 1px solid dimgray; }
+  input[type=submit] {
+    width: auto;
+    margin-bottom: 0;
+    border-radius: 2px;
+    background: #E8E8E8;
+    color: #25291C;
+    cursor: pointer; }
+    input[type=submit]:focus, input[type=submit]:hover {
+      border: 1px solid dimgray;
+      background: #c2c2c2;
+      color: #070600; }
+
 pre {
   margin: 0; }
   pre > code {
