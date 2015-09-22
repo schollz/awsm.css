@@ -205,3 +205,7 @@ hr {
   margin: 25px 0;
   border: 1px solid rgba(232, 232, 232, 0.7);
   border-bottom: none; }
+
+var {
+  font-family: monospace;
+  font-style: normal; }
