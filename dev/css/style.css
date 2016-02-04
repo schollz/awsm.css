@@ -50,6 +50,8 @@ nav {
       display: inline-block;
       margin: 0 5px;
       color: #7D7D77; }
+  nav a:visited {
+    color: #0064C1; }
 
 aside {
   position: absolute;
