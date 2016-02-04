@@ -174,7 +174,7 @@ label {
 	display: block;
 } 
 
-input {
+%inputs {
 	box-sizing: border-box;
 	display: block;
 	width: 100%;
@@ -192,6 +192,10 @@ input {
 	&:focus {
 		border: 1px solid darken($border-color, 50);
 	}
+}
+
+input {
+	@extend %inputs;
 
 	&[type=submit] {
 		width: auto;
@@ -211,6 +215,10 @@ input {
 			color: $accent-color;
 		}
 	}
+}
+
+textarea {
+	@extend %inputs;
 }
 
 pre {
