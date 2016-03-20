@@ -45,7 +45,6 @@
 				</footer>
 			</blockquote>
 			<p>Yeah! They have absolutelly no custom styles :)</p>
-			<!-- headings -->
 		</section>
 
 		<section id="lists">
@@ -158,7 +157,14 @@
 
 		<section id="forms">
 			<h2>Forms</h2>
-			<form>
+			<script>
+				function accept() {
+					document.getElementById('output').style.display = 'block';
+
+					return false;
+				}
+			</script>
+			<form onsubmit="accept(); return false;">
 				<h4>Mars vacation program</h4>
 				<fieldset>
 					<legend>Be first</legend>
@@ -166,18 +172,42 @@
 					<input type="text" id="first-name">
 					<label for="last-name">Last Name</label>
 					<input type="text" id="last-name">
+					<label for="date">Date of birth</label>
+					<input id="date" type="date">
+					<label for="country">Country</label>
+					<select id="country">
+						<option value="china">China</option>
+						<option value="russia">Russia</option>
+						<option value="usa">USA</option>
+					</select>
 					<label for="about">Tell us about yourself</label>
 					<textarea id="about"></textarea>
+					<label for="photo">Photo</label>
+					<input id="photo" type="file">
 					<input type="submit" value="Submit">
+					<button type="reset">Reset</button>
+					<output style="display: none" id="output">
+						<p>Welcome on board!</p>
+					</output>
 				</fieldset>
 			</form>
-			<!-- button, fieldset, form, input, label ?, legend, noscript?, optgroup & option ?, select, textarea -->
 		</section>
 
 		<section id="code">
 			<h2>Code formatting</h2>
 			<p><code>sub</code> and <code>sup</code> are supported too: <var>t<sub>n</sub> = n<sup>3</sup></var>.</p>
-			<!-- kbd, output, pre, samp, var -->
+			<p>Also it has support of <code>kbd</code>: <kbd>Ctrl</kbd>+<kbd>F</kbd>; <code>samp</code>:</p>
+			<samp>
+				[22:13:57] Starting 'scss'...<br>
+				[22:13:57] Finished 'scss' after 2.16 ms<br>
+				[22:13:57] Starting 'css'...<br>
+				[22:13:57] Finished 'css' after 1.99 ms<br>
+				[BS] 1 file changed (awsm.min.css)
+			</samp>
+			<p>..and the block of code</p>
+			<pre><code>&lt;h2&gt;Code formatting&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;sub&lt;/code&gt; and &lt;code&gt;sup&lt;/code&gt; are supported too: &lt;var&gt;t&lt;sub&gt;n&lt;/sub&gt; = n&lt;sup&gt;3&lt;/sup&gt;&lt;/var&gt;.&lt;/p&gt;</code></pre>
+			<p>If you need a good syntax highlight for your code, check the <a title="Good plugins" href="plugins.html#highlightjs-prismjs">Plugins</a> section.</p>
 		</section>
 
 		<section id="misc">
@@ -186,7 +216,9 @@
 				<summary>Show me the magic</summary>
 				<p>This simple spoiler does not work in Internet Explorer and Firefox yet. Coming soon :)</p>
 			</details>
-			<!-- meter, progress -->
+			<noscript>
+				This is an example of noscript but it seems like you'll never see that :)
+			</noscript>
 		</section>
 
 	</main>
