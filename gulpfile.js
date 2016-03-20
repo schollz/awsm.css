@@ -17,14 +17,10 @@ var gulp		= require('gulp'),
 
 /* paths */
 
-var mask = {
+var input = {
 		html: 'dev/example/**/*.html',
-		css: 'dev/css/style.css',
+		scss: 'dev/scss/style.scss',
 		images: 'dev/example/images/*'
-	},
-	input = {
-		css: 'dev/css',
-		scss: 'dev/scss/style.scss'
 	},
 	output = {
 		main: 'example',
@@ -34,10 +30,10 @@ var mask = {
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['html', 'scss', 'css', 'images']);
+gulp.task('build', ['markup', 'styles', 'images']);
 
-gulp.task('html', function() {
-	gulp.src(mask.html)
+gulp.task('markup', function() {
+	gulp.src(input.html)
 		.pipe(fileinclude().on('error', util.log))
 		.pipe(cache('htmling'))
 		.pipe(filter(['*', '!dev/example/includes']))
@@ -45,26 +41,23 @@ gulp.task('html', function() {
 		.pipe(browserSync.stream());
 });
 
-gulp.task('scss', function() {
+gulp.task('styles', function() {
 	gulp.src(input.scss)
 		.pipe(sass().on('error', util.log))
-		.pipe(gulp.dest(input.css))
-});
 
-gulp.task('css', function() {
-	gulp.src(mask.css)
-		.pipe(cache('cssing'))
 		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }), nocomments() ]))
 		.pipe(rename('awsm.css'))
 		.pipe(gulp.dest(output.css))
+
 		.pipe(minifyCSS())
 		.pipe(rename('awsm.min.css'))
 		.pipe(gulp.dest(output.css))
+
 		.pipe(browserSync.stream());
 });
 
 gulp.task('images', function() {
-	gulp.src(mask.images) 
+	gulp.src(input.images) 
 		.pipe(gulp.dest(output.images))
 		.pipe(browserSync.stream());
 });
@@ -79,10 +72,9 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(mask.html, ['html']);
-	gulp.watch(input.scss, ['scss']);
-	gulp.watch(mask.css, ['css']);
-	gulp.watch(mask.images, ['images']);
+	gulp.watch(input.html, ['markup']);
+	gulp.watch(input.scss, ['styles']);
+	gulp.watch(input.images, ['images']);
 });
 
 gulp.task('clean', function(cb) {
