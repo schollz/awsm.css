@@ -262,7 +262,8 @@ details{
     margin:0 -0.5em 0;
     background-color:white;
     outline:none;
-    font-weight:700; }
+    font-weight:700;
+    cursor:pointer; }
 
 table{
   width:100%;
