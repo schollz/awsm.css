@@ -16,9 +16,9 @@ Also don't forget to add viewport info to `<head>` section for adaptation to mob
 
 ## Download
 
-Download the latest version here — [awsm.css](https://rawgit.com/igoradamenko/awsm.css/master/example/css/awsm.css).
+Download the latest version here — [awsm.css](https://cdn.rawgit.com/igoradamenko/awsm.css/1.0/example/css/awsm.css).
 
-Minified — [awsm.min.css](https://rawgit.com/igoradamenko/awsm.css/master/example/css/awsm.min.css) (2.2 Kb after gzip).
+Minified — [awsm.min.css](https://cdn.rawgit.com/igoradamenko/awsm.css/1.0/example/css/awsm.min.css) (2.2 Kb after gzip).
 
 ## Why?
 

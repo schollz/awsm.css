@@ -23,6 +23,7 @@ var input = {
 		images: 'dev/example/images/*'
 	},
 	output = {
+		dist: 'dist',
 		main: 'example',
 		css: 'example/css',
 		images: 'example/images'
@@ -48,10 +49,12 @@ gulp.task('styles', function() {
 		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }), nocomments() ]))
 		.pipe(rename('awsm.css'))
 		.pipe(gulp.dest(output.css))
+		.pipe(gulp.dest(output.dist))
 
 		.pipe(minifyCSS())
 		.pipe(rename('awsm.min.css'))
 		.pipe(gulp.dest(output.css))
+		.pipe(gulp.dest(output.dist))
 
 		.pipe(browserSync.stream());
 });
