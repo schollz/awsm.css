@@ -1,5 +1,25 @@
 /* colors */
 /* sizes */
+/* placeholders */
+a:hover,
+a:focus, a:visited:hover {
+  color: #3000c1;
+  transition: color 0ms; }
+
+input, textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0.3em 0.5em;
+  border: 1px solid #b5b5b5;
+  outline: none;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border 200ms; }
+  input:focus, textarea:focus {
+    border: 1px solid dimgray; }
+
 /* main */
 html {
   color: #111;
@@ -25,11 +45,6 @@ body {
     color: #A3A39B;
     font-size: 0.9em;
     text-align: center; }
-
-a:hover,
-a:focus, a:visited:hover {
-  color: #3000c1;
-  transition: color 0ms; }
 
 header p {
   font-size: 18px; }
@@ -114,20 +129,6 @@ legend {
 
 label {
   display: block; }
-
-input, textarea {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 0.3em 0.5em;
-  border: 1px solid #b5b5b5;
-  outline: none;
-  font-size: 1em;
-  font-family: inherit;
-  transition: border 200ms; }
-  input:focus, textarea:focus {
-    border: 1px solid dimgray; }
 
 input[type=submit] {
   width: auto;
@@ -254,3 +255,11 @@ hr {
 var {
   font-family: monospace;
   font-style: normal; }
+
+audio {
+  width: 100%;
+  margin: 10px 0 5px; }
+
+video {
+  max-width: 100%;
+  width: 100%; }

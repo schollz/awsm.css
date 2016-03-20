@@ -19,7 +19,7 @@
 	</header>
 	<main> 
 
-		<section>  
+		<section id="main">  
 			<h2>Main blocks</h2>
 			<p>awsm.css contains styles for all HTML5 skeleton tags. If you open the source code of this page you'll see all of them (except <code>article</code> but there are styles for it too).</p>
 			<h3>What about others?</h3>
@@ -41,7 +41,7 @@
 			<!-- headings -->
 		</section>
 
-		<section>
+		<section id="lists">
 			<h2>Lists</h2>
 			<p>There's boring unordered list of jedi masters:</p>
 			<ul>
@@ -80,7 +80,7 @@
 			</dl>
 		</section>
 
-		<section>
+		<section id="tables">
 			<h2>Tables</h2>
 			<p>For instance let's look at Apple, Microsoft & Google:</p>
 			<table>
@@ -121,7 +121,7 @@
 			</table>
 		</section>
 
-		<section>
+		<section id="inlines">
 			<h2>Inlines</h2>
 			<p>awsm.css contains many styles for inline elements. For example <dfn>omfg</dfn> is abbreviation which means “Oh my fucking God!”. It's one of the most popular <abbr title="World Wide Web">WWW</abbr> abbreviation.</p>
 			<p>Of course the library has styles for <strong>strong</strong> and <em>emphasized</em> text. It doesn't have something special for <code>b</code> and <code>i</code> because in HTML5 they are only semantical elements. So they are same as <code>strong</code> and <code>em</code>.</p>
@@ -133,16 +133,23 @@
 			<img src="images/sleepy-cat.jpg" alt="Sleepy cat">
 		</section>
 
-		<section>
+		<section id="media">
 			<h2>Media</h2>
-			<!-- audio, video -->
+			<p>View of audio and video depends on your browser. You can see examples below.</p>
+			<aside>This is a background theme of <a href="https://radio-t.com" target="_blank" title="The famous Russian IT-podcast">Radio-T</a>.</aside>
+			<audio src="http://igoradamenko.com/github/awsm.css/radio-t.mp3" controls loop>
+				Your browser does not support <code>audio</code> or MP3.
+			</audio>
+			<video src="http://igoradamenko.com/github/awsm.css/cats.mp4" controls>
+				Your browser does not support <code>video</code> or MP4.
+			</video>
 		</section>
 
 		<section>
 			<p><em>Other elements are coming soon</em></p>
 		</section>
 
-		<section>
+		<section id="forms">
 			<h2>Forms</h2>
 			<form>
 				<h4>Mars vacation program</h4>
@@ -160,13 +167,13 @@
 			<!-- button, fieldset, form, input, label ?, legend, noscript?, optgroup & option ?, select, textarea -->
 		</section>
 
-		<section>
+		<section id="code">
 			<h2>Code formatting</h2>
 			<p><code>sub</code> and <code>sup</code> are supported too: <var>t<sub>n</sub> = n<sup>3</sup></var>.</p>
 			<!-- kbd, output, pre, samp, var -->
 		</section>
 
-		<section>
+		<section id="misc">
 			<h2>Misc.</h2>
 			<details>
 				<summary>Show me the magic</summary>

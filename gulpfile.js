@@ -9,7 +9,8 @@ var gulp		= require('gulp'),
 	filter 		= require('gulp-filter'),
 	rimraf		= require('rimraf'),
 
-	autoprefixr = require('autoprefixer-core'),
+	autoprefixr	= require('autoprefixer'),
+	nocomments	= require('postcss-discard-comments'),
 	sass		= require('gulp-sass'),
 	postcss 	= require('gulp-postcss'),
 	minifyCSS	= require('gulp-minify-css');
@@ -53,7 +54,7 @@ gulp.task('scss', function() {
 gulp.task('css', function() {
 	gulp.src(mask.css)
 		.pipe(cache('cssing'))
-		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }) ]))
+		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }), nocomments() ]))
 		.pipe(rename('awsm.css'))
 		.pipe(gulp.dest(output.css))
 		.pipe(minifyCSS())
