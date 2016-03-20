@@ -4,10 +4,19 @@ a:focus, a:visited:hover{
   -webkit-transition:color 0ms;
   transition:color 0ms; }
 
-input, textarea{
+input[type=text],
+input[type^=date],
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=month],
+input[type=week],
+input[type=url], textarea, input[type=submit],
+input[type=button],
+input[type=reset], input[type=file], input[type=color], button, select{
   box-sizing:border-box;
-  display:block;
-  width:100%;
   margin-bottom:20px;
   padding:0.3em 0.5em;
   border:1px solid #b5b5b5;
@@ -16,8 +25,55 @@ input, textarea{
   font-family:inherit;
   -webkit-transition:border 200ms;
   transition:border 200ms; }
-  input:focus, textarea:focus{
+
+input[type=text],
+input[type^=date],
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=month],
+input[type=week],
+input[type=url], textarea{
+  display:block;
+  width:100%; }
+  input[type=text]:focus,
+  input[type^=date]:focus,
+  input[type=email]:focus,
+  input[type=number]:focus,
+  input[type=search]:focus,
+  input[type=tel]:focus,
+  input[type=time]:focus,
+  input[type=month]:focus,
+  input[type=week]:focus,
+  input[type=url]:focus, textarea:focus{
     border:1px solid dimgray; }
+
+input[type=submit],
+input[type=button],
+input[type=reset], input[type=file], input[type=color], button, select{
+  display:inline-block;
+  width:auto;
+  margin-bottom:0;
+  border-radius:2px;
+  background:#E8E8E8;
+  color:#25291C;
+  cursor:pointer; }
+  input[type=submit]:focus,
+  input[type=button]:focus,
+  input[type=reset]:focus, input[type=file]:focus, input[type=color]:focus, button:focus, select:focus, input[type=submit]:hover,
+  input[type=button]:hover,
+  input[type=reset]:hover, input[type=file]:hover, input[type=color]:hover, button:hover, select:hover{
+    border:1px solid dimgray;
+    background:#c2c2c2;
+    color:#070600; }
+
+pre, code{
+  background:#f2f2f2;
+  border:1px solid #E8E8E8;
+  border-radius:1px;
+  font-family:Consolas, Courier, monospace; }
 html{
   color:#111;
   font-family:"PT Serif", Georgia, sans-serif;
@@ -128,31 +184,31 @@ legend{
 label{
   display:block; }
 
-input[type=submit]{
-  width:auto;
-  margin-bottom:0;
-  border-radius:2px;
-  background:#E8E8E8;
-  color:#25291C;
-  cursor:pointer; }
-  input[type=submit]:focus, input[type=submit]:hover{
-    border:1px solid dimgray;
-    background:#c2c2c2;
-    color:#070600; }
+input[type=file]{
+  display:block;
+  margin-bottom:20px; }
+
+input[type=color]{
+  display:block;
+  width:4em;
+  height:2em;
+  margin-bottom:20px; }
+
+select{
+  display:block;
+  margin-bottom:20px; }
 
 pre{
   margin:0; }
   pre > code{
     display:block;
     padding:10px 15px;
-    overflow:auto; }
+    overflow:auto;
+    background:transparent;
+    border:none; }
 
 code{
-  padding:0.0625em 0.3125em;
-  background:#f2f2f2;
-  border:1px solid #E8E8E8;
-  border-radius:1px;
-  font-family:Consolas, Courier, monospace; }
+  padding:0.0625em 0.3125em; }
 
 img{
   display:block;
@@ -196,6 +252,7 @@ dl{
 details{
   display:block;
   padding:0 0.5em 0;
+  margin:20px 0;
   border:1px solid #E8E8E8;
   border-radius:1px;
   background-color:#fafafa; }
@@ -256,8 +313,23 @@ var{
 
 audio{
   width:100%;
-  margin:10px 0 5px; }
+  margin:10px 0 15px; }
 
 video{
   max-width:100%;
-  width:100%; }
+  width:100%;
+  margin:10px 0 15px; }
+
+noscript{
+  color:#d00000; }
+
+kbd{
+  display:inline-block;
+  padding:0 0.6ex;
+  margin:0 0.4ex;
+  background:#f9f9f8;
+  border-radius:5px;
+  box-shadow:0 1px #E8E8E8; }
+
+output{
+  display:block; }

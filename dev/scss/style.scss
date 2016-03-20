@@ -19,24 +19,60 @@ $content-size: 666px;
 	transition: color 0ms;
 }
 
-%inputs {
+%inputs-buttons {
 	box-sizing: border-box;
-	display: block;
-	width: 100%;
 	margin-bottom: 20px;
 	padding: .3em .5em;
 	
 	border: 1px solid darken($border-color, 20);
 	outline: none;
-	
+
 	font-size: 1em;
 	font-family: inherit;
 	
 	transition: border 200ms;
+}
+
+%inputs {
+	@extend %inputs-buttons;
+
+	display: block;
+	width: 100%;
 	
 	&:focus {
 		border: 1px solid darken($border-color, 50);
 	}
+}
+
+%buttons {
+	@extend %inputs-buttons;
+	
+	display: inline-block;
+	
+	width: auto;
+	margin-bottom: 0;
+	
+	border-radius: 2px;
+	background: $border-color;
+	
+	color: $headers-color;
+
+	cursor: pointer;
+	
+	&:focus, &:hover {
+		border: 1px solid darken($border-color, 50);
+		background: darken($border-color, 15);
+		
+		color: $accent-color;
+	}
+}
+
+%code {
+	background: #f2f2f2;
+	border: 1px solid $border-color;
+	border-radius: 1px;
+	
+	font-family: Consolas, Courier, monospace;
 }
 
 /* main */
@@ -201,26 +237,51 @@ label {
 }
 
 input {
-	@extend %inputs;
-
-	&[type=submit] {
-		width: auto;
-		margin-bottom: 0;
-		
-		border-radius: 2px;
-		background: $border-color;
-		
-		color: $headers-color;
-
-		cursor: pointer;
-		
-		&:focus, &:hover {
-			border: 1px solid darken($border-color, 50);
-			background: darken($border-color, 15);
-			
-			color: $accent-color;
-		}
+	&[type=text],
+	&[type^=date],
+	&[type=email],
+	&[type=number],
+	&[type=search],
+	&[type=tel],
+	&[type=time],
+	&[type=month], 
+	&[type=week], 
+	&[type=url] {
+		@extend %inputs;
 	}
+
+	&[type=submit],
+	&[type=button],
+	&[type=reset] {
+		@extend %buttons;
+	}
+
+	&[type=file] {
+		@extend %buttons;
+		
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	&[type=color] {
+		@extend %buttons;
+		
+		display: block;
+		width: 4em;
+		height: 2em;
+		margin-bottom: 20px;
+	}
+}
+
+button {
+	@extend %buttons;
+}
+
+select {
+	@extend %buttons;
+	
+	display: block;
+	margin-bottom: 20px;
 }
 
 textarea {
@@ -228,23 +289,26 @@ textarea {
 }
 
 pre {
+	@extend %code;
+
 	margin: 0;
 	
 	> code {
 		display: block;
 		padding: 10px 15px;
-		
+
 		overflow: auto;
+
+		// for compatibility with syntax highlighters
+		background: transparent;
+		border: none;
 	}
 }
 
 code {
-	padding: 0.06250em 0.31250em;
-	background: #f2f2f2;
-	border: 1px solid $border-color;
-	border-radius: 1px;
+	@extend %code;
 	
-	font-family: Consolas, Courier, monospace;
+	padding: 0.06250em 0.31250em;
 }
 
 img {
@@ -308,6 +372,8 @@ dl {
 details {
 	display: block;
 	padding: 0 .5em 0;
+	margin: 20px 0;
+	
 	border: 1px solid $border-color;
 	border-radius: 1px;
 	background-color: #fafafa;
@@ -402,10 +468,29 @@ var {
 
 audio {
 	width: 100%; 
-	margin: 10px 0 5px;
+	margin: 10px 0 15px;
 }
 
 video {
 	max-width: 100%;
 	width: 100%;
+	margin: 10px 0 15px;
+}
+
+noscript {
+	color: #d00000;
+}
+
+kbd {
+	display: inline-block;
+	padding: 0 .6ex;
+	margin: 0 0.4ex;
+	
+	background: lighten($invisible-color, 35);
+	border-radius: 5px;
+	box-shadow: 0 1px $border-color;
+}
+
+output {
+	display: block;
 }
