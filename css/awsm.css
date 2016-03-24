@@ -13,9 +13,10 @@ input[type=tel],
 input[type=time],
 input[type=month],
 input[type=week],
-input[type=url], textarea, input[type=submit],
+input[type=url], textarea, button, select, input[type=submit],
 input[type=button],
-input[type=reset], input[type=file], input[type=color], button, select{
+input[type=reset], input[type=color],
+input[type=file]{
   box-sizing:border-box;
   margin-bottom:20px;
   padding:0.3em 0.5em;
@@ -37,7 +38,8 @@ input[type=month],
 input[type=week],
 input[type=url], textarea{
   display:block;
-  width:100%; }
+  width:100%;
+  border-radius:0; }
   input[type=text]:focus,
   input[type^=date]:focus,
   input[type=email]:focus,
@@ -50,9 +52,10 @@ input[type=url], textarea{
   input[type=url]:focus, textarea:focus{
     border:1px solid dimgray; }
 
-input[type=submit],
+button, select, input[type=submit],
 input[type=button],
-input[type=reset], input[type=file], input[type=color], button, select{
+input[type=reset], input[type=color],
+input[type=file]{
   display:inline-block;
   width:auto;
   margin-bottom:0;
@@ -60,11 +63,13 @@ input[type=reset], input[type=file], input[type=color], button, select{
   background:#E8E8E8;
   color:#25291C;
   cursor:pointer; }
-  input[type=submit]:focus,
+  button:focus, select:focus, input[type=submit]:focus,
   input[type=button]:focus,
-  input[type=reset]:focus, input[type=file]:focus, input[type=color]:focus, button:focus, select:focus, input[type=submit]:hover,
+  input[type=reset]:focus, input[type=color]:focus,
+  input[type=file]:focus, button:hover, select:hover, input[type=submit]:hover,
   input[type=button]:hover,
-  input[type=reset]:hover, input[type=file]:hover, input[type=color]:hover, button:hover, select:hover{
+  input[type=reset]:hover, input[type=color]:hover,
+  input[type=file]:hover{
     border:1px solid dimgray;
     background:#c2c2c2;
     color:#070600; }
@@ -171,7 +176,7 @@ h4{
   font-size:1em; }
 
 form{
-  max-width:300px;
+  max-width:400px;
   padding:12px 10px;
   margin:0 auto; }
 
@@ -184,26 +189,34 @@ legend{
 label{
   display:block; }
 
+select{
+  display:block;
+  margin-bottom:20px; }
+
+input[type=submit],
+input[type=button],
+input[type=reset]{
+  -webkit-appearance:none; }
+
+input[type=color],
 input[type=file]{
   display:block;
   margin-bottom:20px; }
 
 input[type=color]{
-  display:block;
   width:4em;
-  height:2em;
-  margin-bottom:20px; }
+  height:2em; }
 
-select{
-  display:block;
-  margin-bottom:20px; }
+input[type=file]{
+  width:100%; }
 
 pre{
   margin:0; }
   pre > code{
     display:block;
     padding:10px 15px;
-    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    overflow-x:auto;
     background:transparent;
     border:none; }
 
@@ -264,26 +277,44 @@ details{
     outline:none;
     font-weight:700;
     cursor:pointer; }
-
 table{
+  -webkit-overflow-scrolling:touch;
+  display:inline-block;
+  vertical-align:top;
+  max-width:100%;
   width:100%;
+  overflow-x:auto;
+  background:-webkit-radial-gradient(left, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, -webkit-radial-gradient(right, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
+  background:radial-gradient(left, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, radial-gradient(right, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
+  background-size:10px 100%, 10px 100%;
+  background-attachment:scroll, scroll;
+  background-repeat:no-repeat;
   border-spacing:0;
   border-collapse:collapse;
-  border:1px solid #E8E8E8;
   text-align:left; }
   table caption{
-    font-style:italic;
-    margin-bottom:0.3em; }
+    padding:0.5em 0;
+    background:#fff;
+    font-style:italic; }
   table thead{
     background:#E8E8E8; }
-  table td, table th{
+  table tr td, table tr th{
     padding:0.3em 0.7em;
     border:1px solid #E8E8E8;
     vertical-align:top; }
-  table th{
+  table tr td:first-child{
+    background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-size:20px 100%;
+    background-repeat:no-repeat; }
+  table tr td:last-child{
+    background-image:-webkit-linear-gradient(right, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-image:linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-position:100% 0;
+    background-size:20px 100%;
+    background-repeat:no-repeat; }
+  table tr th{
     border:1px solid #cfcfcf; }
-  table tr:nth-child(even) td{
-    background:#f7f7f7; }
 
 abbr{
   font-size:.875em;
