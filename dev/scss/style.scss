@@ -39,6 +39,8 @@ $content-size: 666px;
 	display: block;
 	width: 100%;
 	
+	border-radius: 0;
+	
 	&:focus {
 		border: 1px solid darken($border-color, 50);
 	}
@@ -219,7 +221,7 @@ h4 {
 }
 
 form {
-	max-width: 300px;
+	max-width: 400px;
 	padding: 12px 10px;
 	margin: 0 auto;
 }
@@ -234,6 +236,17 @@ legend {
 
 label {
 	display: block;
+}
+
+button {
+	@extend %buttons;
+}
+
+select {
+	@extend %buttons;
+	
+	display: block;
+	margin-bottom: 20px;
 }
 
 input {
@@ -254,8 +267,11 @@ input {
 	&[type=button],
 	&[type=reset] {
 		@extend %buttons;
+		
+		-webkit-appearance: none;
 	}
 
+	&[type=color],
 	&[type=file] {
 		@extend %buttons;
 		
@@ -264,24 +280,13 @@ input {
 	}
 
 	&[type=color] {
-		@extend %buttons;
-		
-		display: block;
 		width: 4em;
 		height: 2em;
-		margin-bottom: 20px;
 	}
-}
 
-button {
-	@extend %buttons;
-}
-
-select {
-	@extend %buttons;
-	
-	display: block;
-	margin-bottom: 20px;
+	&[type=file] {
+		width: 100%;
+	} 
 }
 
 textarea {
@@ -297,11 +302,12 @@ pre {
 		display: block;
 		padding: 10px 15px;
 
-		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
 
 		// for compatibility with syntax highlighters
 		background: transparent;
-		border: none;
+		border: none; 
 	}
 }
 
@@ -392,18 +398,37 @@ details {
 	} 
 }
 
+/*
+ * CSS only Responsive Tables
+ * http://dbushell.com/2016/03/04/css-only-responsive-tables/
+ * by David Bushell
+*/
 table {
+	-webkit-overflow-scrolling: touch;
+ 
+	display: inline-block;
+	vertical-align: top;
+	max-width: 100%;
 	width: 100%;
+	overflow-x: auto;
+	
+	background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
+				radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
+	background-size: 10px 100%, 10px 100%;
+	background-attachment: scroll, scroll;
+	background-repeat: no-repeat;
 	
 	border-spacing: 0;
 	border-collapse: collapse;
-	border: 1px solid $border-color;
-	
+
 	text-align: left;
 	
 	caption {
+		padding: 0.5em 0;
+		
+		background: #fff;
+		
 		font-style: italic;
-		margin-bottom: 0.3em;
 	}
 	
 	thead {
@@ -419,18 +444,25 @@ table {
 
 	td {
 		@extend %td-th;
+		
+		&:first-child {
+			background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+			background-size: 20px 100%;
+			background-repeat: no-repeat;
+		}
+
+		&:last-child {
+			background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+			background-position: 100% 0;
+			background-size: 20px 100%;
+			background-repeat: no-repeat;
+		}
 	}
 
 	th {
 		@extend %td-th;
 		
 		border: 1px solid darken($border-color, 10);
-	}
-
-	tr {
-		&:nth-child(even) td {
-			background: lighten($border-color, 6);
-		}
 	}
 }
 
