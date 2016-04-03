@@ -1,4 +1,4 @@
-@import 'placeholders';
+@import 'mixins';
 @import 'variables';
 
 html {
@@ -156,25 +156,28 @@ form {
 
 fieldset {
 	border: 1px solid darken(color('border'), 10);
+	
+	> p {
+		margin-top: 0;
+	}
+
+	p + p {
+		margin-bottom: 0.75em;
+	}
 } 
 
 legend {
 	color: color('disabled');
 } 
 
-label {
-	display: block;
-}
-
 button {
-	@extend %buttons;
+	@include buttons;
 }
 
 select {
-	@extend %buttons;
+	@include buttons;
 	
 	display: block;
-	margin-bottom: 20px;
 }
 
 input {
@@ -188,23 +191,24 @@ input {
 	&[type=month], 
 	&[type=week], 
 	&[type=url] {
-		@extend %inputs;
+		@include inputs;
+		
+		display: block;
 	}
 
 	&[type=submit],
 	&[type=button],
 	&[type=reset] {
-		@extend %buttons;
+		@include buttons;
 		
 		-webkit-appearance: none;
 	}
 
 	&[type=color],
 	&[type=file] {
-		@extend %buttons;
+		@include buttons;
 		
 		display: block;
-		margin-bottom: 20px;
 	}
 
 	&[type=color] {
@@ -218,11 +222,11 @@ input {
 }
 
 textarea {
-	@extend %inputs;
+	@include inputs;
 }
 
 pre {
-	@extend %code;
+	@include code;
 
 	margin: 0;
 	
@@ -240,7 +244,7 @@ pre {
 }
 
 code {
-	@extend %code;
+	@include code;
 	
 	padding: 0.06250em 0.31250em;
 }

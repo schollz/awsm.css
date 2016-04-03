@@ -1,8 +1,7 @@
 @import 'variables';
 
-%inputs-buttons {
+@mixin inputs-buttons {
 	box-sizing: border-box;
-	margin-bottom: 20px;
 	padding: .3em .5em;
 	
 	border: 1px solid darken(color('border'), 20);
@@ -14,8 +13,8 @@
 	transition: border 200ms;
 }
 
-%inputs {
-	@extend %inputs-buttons;
+@mixin inputs {
+	@include inputs-buttons;
 
 	display: block;
 	width: 100%;
@@ -27,8 +26,8 @@
 	}
 }
 
-%buttons {
-	@extend %inputs-buttons;
+@mixin buttons {
+	@include inputs-buttons;
 	
 	display: inline-block;
 	
@@ -50,7 +49,7 @@
 	}
 }
 
-%code {
+@mixin code {
 	background: #f2f2f2;
 	border: 1px solid color('border');
 	border-radius: 1px;

@@ -6,6 +6,7 @@ var gulp		= require('gulp'),
 	cache 		= require('gulp-cached'),
 	fileinclude = require('gulp-file-include'),
 	rename		= require('gulp-rename'),
+	concat		= require('gulp-concat'),
 	filter 		= require('gulp-filter'),
 	rimraf		= require('rimraf'),
 
@@ -19,7 +20,7 @@ var gulp		= require('gulp'),
 
 var input = {
 		html: 'dev/example/**/*.html',
-		scss: 'dev/scss/style.scss',
+		scss: 'dev/scss/**/*.scss',
 		images: 'dev/example/images/*'
 	},
 	output = {
@@ -44,10 +45,10 @@ gulp.task('markup', function() {
 
 gulp.task('styles', function() {
 	gulp.src(input.scss)
+		.pipe(concat('awsm.scss'))
 		.pipe(sass().on('error', util.log))
 
 		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }), nocomments() ]))
-		.pipe(rename('awsm.css'))
 		.pipe(gulp.dest(output.css))
 		.pipe(gulp.dest(output.dist))
 
