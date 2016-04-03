@@ -1,0 +1,59 @@
+@import 'variables';
+
+%inputs-buttons {
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	padding: .3em .5em;
+	
+	border: 1px solid darken(color('border'), 20);
+	outline: none;
+
+	font-size: 1em;
+	font-family: inherit;
+	
+	transition: border 200ms;
+}
+
+%inputs {
+	@extend %inputs-buttons;
+
+	display: block;
+	width: 100%;
+	
+	border-radius: 0;
+	
+	&:focus {
+		border: 1px solid darken(color('border'), 50);
+	}
+}
+
+%buttons {
+	@extend %inputs-buttons;
+	
+	display: inline-block;
+	
+	width: auto;
+	margin-bottom: 0;
+	
+	border-radius: 2px;
+	background: color('border');
+	
+	color: color('headers');
+
+	cursor: pointer;
+	
+	&:focus, &:hover {
+		border: 1px solid darken(color('border'), 50);
+		background: darken(color('border'), 15);
+		
+		color: color('accent');
+	}
+}
+
+%code {
+	background: #f2f2f2;
+	border: 1px solid color('border');
+	border-radius: 1px;
+	
+	font-family: Consolas, Courier, monospace;
+}

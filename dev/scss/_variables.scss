@@ -1,0 +1,19 @@
+/* colors */
+$colors: (
+	'headers': #25291C,
+	'accent': #070600,
+	'text': #111,
+	'disabled': #7D7D77,
+	'invisible': #A3A39B,
+	'border': #E8E8E8,
+	'link': #0064C1,
+	'link-hover': #3000c1,
+	'link-visited': #6d00c1,
+);
+
+@function color($key: 'primary') {
+	@return map-get($colors, $key);
+}
+
+/* sizes */
+$content-size: 666px;

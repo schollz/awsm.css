@@ -1,85 +1,8 @@
-/* colors */
-$headers-color: #25291C;
-$accent-color: #070600;
-$text-color: #111;
-$disable-color: #7D7D77;
-$invisible-color: #A3A39B;
-$border-color: #E8E8E8;
-$link-color: #0064C1;
-$link-hover-color: #3000c1;
-$link-visited-color: #6d00c1;
+@import 'placeholders';
+@import 'variables';
 
-/* sizes */
-$content-size: 666px;
-
-/* placeholders */
-%links-hover {
-	color: $link-hover-color;
-	
-	transition: color 0ms;
-}
-
-%inputs-buttons {
-	box-sizing: border-box;
-	margin-bottom: 20px;
-	padding: .3em .5em;
-	
-	border: 1px solid darken($border-color, 20);
-	outline: none;
-
-	font-size: 1em;
-	font-family: inherit;
-	
-	transition: border 200ms;
-}
-
-%inputs {
-	@extend %inputs-buttons;
-
-	display: block;
-	width: 100%;
-	
-	border-radius: 0;
-	
-	&:focus {
-		border: 1px solid darken($border-color, 50);
-	}
-}
-
-%buttons {
-	@extend %inputs-buttons;
-	
-	display: inline-block;
-	
-	width: auto;
-	margin-bottom: 0;
-	
-	border-radius: 2px;
-	background: $border-color;
-	
-	color: $headers-color;
-
-	cursor: pointer;
-	
-	&:focus, &:hover {
-		border: 1px solid darken($border-color, 50);
-		background: darken($border-color, 15);
-		
-		color: $accent-color;
-	}
-}
-
-%code {
-	background: #f2f2f2;
-	border: 1px solid $border-color;
-	border-radius: 1px;
-	
-	font-family: Consolas, Courier, monospace;
-}
-
-/* main */
 html {
-	color: $text-color;
+	color: color('text');
 	font-family: "PT Serif", Georgia, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
@@ -92,8 +15,9 @@ body {
 	> main,
 	> footer,
 	> article {
-		display: block;
 		position: relative;
+
+		display: block;
 		max-width: $content-size;
 		margin: 0 auto;
 	}
@@ -107,7 +31,7 @@ body {
 	> footer {
 		margin-top: 4em;
 		
-		color: $invisible-color;
+		color: color('invisible');
 		font-size: 0.9em;
 		text-align: center;
 	}
@@ -133,55 +57,59 @@ nav {
 	ul {
 		padding: 0;
 		margin: 0;
+		
 		list-style: none;
 		
 		li {
 			display: inline-block;
 			margin: 0 5px;
 			
-			color: $disable-color;
+			color: color('disabled');
 		}
 	}
 
 	a:visited {
-		color: $link-color;
+		color: color('link');
 	}
 }
 
 aside {
+	$side: 200px;
+	$width: $side * 3/4;
+	
 	position: absolute;
-	right: -200px;
-	max-width: 150px;
+	right: -$side;
+	
+	max-width: $width;
 	padding-right: 1em;
 	
-	color: $disable-color;
+	color: color('disabled');
 	font-style: italic;
 	
-	@media (max-width: $content-size + 200px * 2) {
+	@media (max-width: $content-size + $side * 2) {
 		position: relative;
 		right: auto;
+		
 		max-width: none;
 		padding: 0;
 	}
 }
 
 a {
-	color: $link-color;
+	color: color('link');
 	text-decoration: none;
 	
 	transition: color 300ms;
 
-	&:hover,
-	&:focus {
-		@extend %links-hover;
+	&:visited {
+		color: color('link-visited');
 	}
 
-	&:visited {
-		color: $link-visited-color;
-		
-		&:hover {
-			@extend %links-hover;
-		}
+	&:hover,
+	&:focus {
+		color: color('link-hover');
+			
+		transition: color 0ms;
 	}
 }
 
@@ -189,7 +117,7 @@ h1 {
 	margin-top: 0.5em;
 	margin-bottom: 0;
 	  
-	color: $accent-color;
+	color: color('accent');
 	font-size: 4em;
 	font-weight: 400;
 	line-height: 1.2;
@@ -199,7 +127,7 @@ h2 {
 	margin-top: .8em;
 	margin-bottom: .5em;
 	
-	color: $headers-color;
+	color: color('headers');
 	font-weight: 400;
 	font-size: 2.1em;
 }
@@ -208,7 +136,7 @@ h3 {
 	margin-top: 1.2em;
 	margin-bottom: .5em;
 	
-	color: $headers-color;
+	color: color('headers');
 	font-size: 1.4em;
 	font-weight: 400;
 }
@@ -216,7 +144,7 @@ h3 {
 h4 {
 	margin: 0 0 .5em;
 	
-	color: darken($disable-color, 10);
+	color: darken(color('disabled'), 10);
 	font-size: 1em;
 }
 
@@ -227,11 +155,11 @@ form {
 }
 
 fieldset {
-	border: 1px solid darken($border-color, 10);
+	border: 1px solid darken(color('border'), 10);
 } 
 
 legend {
-	color: $disable-color;
+	color: color('disabled');
 } 
 
 label {
@@ -327,9 +255,10 @@ p {
 	margin: .5em 0;
 	
 	img {
-		margin: .3em 0 .3em .5em;
 		float: right;
-		border: 1px solid $border-color;
+		margin: .3em 0 .3em .5em;
+		
+		border: 1px solid color('border');
 	}
 }
 
@@ -339,7 +268,7 @@ figure {
 	padding: 6px 22px;
 	margin: .5em 0;
 	
-	border: 1px solid $border-color;
+	border: 1px solid color('border');
 	border-radius: 1px;
 	
 	img {
@@ -353,9 +282,10 @@ figure {
 	}
 
 	figcaption {
+		margin-top: 10px;
+		
 		font-style: italic;
 		text-align: center;
-		margin-top: 10px;
 		
 		+ img {
 			margin: 15px 0 10px;
@@ -380,7 +310,7 @@ details {
 	padding: 0 .5em 0;
 	margin: 20px 0;
 	
-	border: 1px solid $border-color;
+	border: 1px solid color('border');
 	border-radius: 1px;
 	background-color: #fafafa;
 	
@@ -407,10 +337,10 @@ table {
 	-webkit-overflow-scrolling: touch;
  
 	display: inline-block;
-	vertical-align: top;
 	max-width: 100%;
 	width: 100%;
 	overflow-x: auto;
+	vertical-align: top;
 	
 	background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
 				radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
@@ -432,12 +362,12 @@ table {
 	}
 	
 	thead {
-		background: $border-color;
+		background: color('border');
 	}
 
 	%td-th {
 		padding: .3em .7em;
-		border: 1px solid $border-color;
+		border: 1px solid color('border');
 		
 		vertical-align: top;
 	}
@@ -462,14 +392,15 @@ table {
 	th {
 		@extend %td-th;
 		
-		border: 1px solid darken($border-color, 10);
+		border: 1px solid darken(color('border'), 10);
 	}
 }
 
 abbr {
+	margin-right: -0.15em;
+	
 	font-size: .875em;
 	letter-spacing: .15em;
-	margin-right: -0.15em;
 }
 
 dfn {
@@ -477,12 +408,13 @@ dfn {
 }
 
 del {
-	color: $disable-color;
+	color: color('disabled');
 }
 
 ins {
+	background: lighten(color('disabled'), 45);
+
 	text-decoration: none;
-	background: lighten($disable-color, 45);
 }
 
 mark {
@@ -491,7 +423,8 @@ mark {
 
 hr {
 	margin: 25px 0;
-	border: 1px solid rgba($border-color, .7);
+	
+	border: 1px solid rgba(color('border'), .7);
 	border-bottom: none;
 } 
 
@@ -520,9 +453,9 @@ kbd {
 	padding: 0 .6ex;
 	margin: 0 0.4ex;
 	
-	background: lighten($invisible-color, 35);
+	background: lighten(color('invisible'), 35);
 	border-radius: 5px;
-	box-shadow: 0 1px $border-color;
+	box-shadow: 0 1px color('border');
 }
 
 output {
