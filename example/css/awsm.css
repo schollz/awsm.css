@@ -2,6 +2,7 @@ html{
   color:#111;
   font-family:"PT Serif", Georgia, sans-serif;
   font-size:16px;
+  font-size:calc(16px + 0.25vw);
   line-height:1.5; }
 
 body{
@@ -20,11 +21,11 @@ body{
   body > footer{
     margin-top:4em;
     color:#A3A39B;
-    font-size:0.9em;
+    font-size:0.9rem;
     text-align:center; }
 
 header p{
-  font-size:18px; }
+  font-size:1.125rem; }
 
 section, article{
   margin-bottom:4em; }
@@ -76,7 +77,7 @@ h1{
   margin-top:0.5em;
   margin-bottom:0;
   color:#070600;
-  font-size:4em;
+  font-size:4rem;
   font-weight:400;
   line-height:1.2; }
 
@@ -85,19 +86,19 @@ h2{
   margin-bottom:.5em;
   color:#25291C;
   font-weight:400;
-  font-size:2.1em; }
+  font-size:2.1rem; }
 
 h3{
   margin-top:1.2em;
   margin-bottom:.5em;
   color:#25291C;
-  font-size:1.4em;
+  font-size:1.4rem;
   font-weight:400; }
 
 h4{
   margin:0 0 0.5em;
   color:#63635e;
-  font-size:1em; }
+  font-size:1rem; }
 
 form{
   max-width:400px;
@@ -382,7 +383,7 @@ table{
 
 abbr{
   margin-right:-0.15em;
-  font-size:.875em;
+  font-size:.875rem;
   letter-spacing:.15em; }
 
 dfn{
