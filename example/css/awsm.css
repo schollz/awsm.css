@@ -33,19 +33,6 @@ section, article{
 address{
   font-style:normal; }
 
-nav{
-  margin:2em 0; }
-  nav ul{
-    padding:0;
-    margin:0;
-    list-style:none; }
-    nav ul li{
-      display:inline-block;
-      margin:0 5px;
-      color:#7D7D77; }
-  nav a:visited{
-    color:#0064C1; }
-
 aside{
   position:absolute;
   right:-200px;
@@ -72,6 +59,22 @@ a{
     color:#3000c1;
     -webkit-transition:color 0ms;
     transition:color 0ms; }
+
+nav{
+  margin:2em 0; }
+  nav ul{
+    padding:0;
+    margin:0;
+    list-style:none; }
+    nav ul li{
+      display:inline-block;
+      margin:0 5px;
+      color:#7D7D77; }
+  nav a:visited{
+    color:#0064C1; }
+  nav a:hover,
+  nav a:focus{
+    color:#3000c1; }
 
 h1{
   margin-top:0.5em;

@@ -52,28 +52,6 @@ address {
 	font-style: normal;
 }
 
-nav {
-	margin: 2em 0;
-	
-	ul {
-		padding: 0;
-		margin: 0;
-		
-		list-style: none;
-		
-		li {
-			display: inline-block;
-			margin: 0 5px;
-			
-			color: color('disabled');
-		}
-	}
-
-	a:visited {
-		color: color('link');
-	}
-}
-
 aside {
 	$side: 200px;
 	$width: $side * 3/4;
@@ -111,6 +89,35 @@ a {
 		color: color('link-hover');
 			
 		transition: color 0ms;
+	}
+}
+
+nav {
+	margin: 2em 0;
+	
+	ul {
+		padding: 0;
+		margin: 0;
+		
+		list-style: none;
+		
+		li {
+			display: inline-block;
+			margin: 0 5px;
+			
+			color: color('disabled');
+		}
+	}
+
+	a {
+		&:visited {
+			color: color('link');
+		}
+
+		&:hover,
+		&:focus {
+			color: color('link-hover');
+		}
 	}
 }
 
